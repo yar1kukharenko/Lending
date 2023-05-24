@@ -1,0 +1,233 @@
+@use "fonts";
+@use "colors";
+@use "media";
+// $base-font-size: calc(1rem - 2px);
+$base-font-size: calc(1rem - 2px);
+$heading-font-size: calc(1rem + 14px);
+$base-font-family: "Work Sans";
+$headings-font-family: "Work Sans";
+
+h1 {
+  font-family: "Work Sans";
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  // font-size: 2.2rem;
+  @include fonts.adaptiv-font(80, 35);
+  color: colors.color(black);
+  text-transform: uppercase;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-family: $base-font-family;
+  // font-size: $heading-font-size;
+  @include fonts.adaptiv-font(32, 28);
+  font-weight: 600;
+  text-align: center;
+  color: colors.color(black);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+p {
+  // font-size: $base-font-size;
+  font-weight: 500;
+  @include fonts.adaptiv-font(20, 14);
+  font-family: $base-font-family;
+  color: colors.color(black);
+  line-height: 21px;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: colors.color(black);
+  font-family: $base-font-family;
+  // font-size: 1rem;
+  @include fonts.adaptiv-font(16, 14);
+  font-weight: 500;
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.grid_container {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  @include media.respond(660) {
+    gap: 25px;
+  }
+}
+
+.link_button {
+  display: block;
+  text-align: center;
+  border: none;
+  background-color: colors.color(Purple);
+  border-radius: 5px;
+  color: white;
+  padding: 15px 0px;
+  text-transform: uppercase;
+  font-family: "Work Sans";
+  font-weight: 600;
+  width: 100%;
+  font-size: calc(1rem + 2px);
+}
+
+.menu__link svg {
+  display: none;
+}
+
+@include media.respond(1024) {
+  .underline_link-1 {
+    display: block;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    &:hover {
+      // --spacing: 8px;
+      --stroke: #6a19f5;
+      --stroke-delay: 0.1s;
+      --offset: 180px;
+    }
+    svg {
+      @include fonts.underline_link(90px, 50px, -50%);
+    }
+  }
+  .underline_link-2 {
+    display: block;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    &:hover {
+      // --spacing: 8px;
+      --stroke: #6a19f5;
+      --stroke-delay: 0.1s;
+      --offset: 180px;
+    }
+    svg {
+      @include fonts.underline_link(140px, 90px, -148%);
+    }
+  }
+  .underline_link-3 {
+    display: block;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    &:hover {
+      // --spacing: 8px;
+      --stroke: #6a19f5;
+      --stroke-delay: 0.1s;
+      --offset: 180px;
+    }
+    svg {
+      @include fonts.underline_link(100px, 50px, -50%);
+    }
+  }
+  .underline_link-4 {
+    display: block;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    &:hover {
+      // --spacing: 8px;
+      --stroke: #6a19f5;
+      --stroke-delay: 0.1s;
+      --offset: 180px;
+    }
+    svg {
+      @include fonts.underline_link(100px, 50px, -50%);
+    }
+  }
+  .underline_link-5 {
+    display: block;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    &:hover {
+      // --spacing: 8px;
+      --stroke: #6a19f5;
+      --stroke-delay: 0.1s;
+      --offset: 180px;
+    }
+    svg {
+      @include fonts.underline_link(100px, 50px, -50%);
+    }
+  }
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 38px;
+}
+
+.layer1 {
+  background-image: url(../img/waves/first.svg);
+}
+
+.spacer2 {
+  aspect-ratio: 960/300;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 49px;
+}
+
+.layer2 {
+  background-image: url(../img/waves/second.svg);
+}
+.spacer3 {
+  aspect-ratio: 960/300;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 69px;
+}
+
+.layer3 {
+  background-image: url(../img/waves/third.svg);
+}
+.spacer4 {
+  aspect-ratio: 960/300;
+  // max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 111px;
+}
+
+.layer4 {
+  background-image: url(../img/waves/fourth.svg);
+}

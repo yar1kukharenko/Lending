@@ -1,0 +1,74 @@
+@use "colors";
+.slick-track {
+  display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slider__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 40px;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.slick-arrow {
+  font-size: 0;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.slick-arrow.slick-prev {
+  background-image: url(../img/testimoinals/button.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  border-radius: 50%;
+}
+.slick-arrow.slick-next {
+  background-image: url(../img/testimoinals/button.svg);
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  border-radius: 50%;
+}
+
+.slick-dots {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  & button {
+    font-size: 0;
+    min-width: 10px;
+    min-height: 13px;
+    max-width: 10px;
+    max-height: 10px;
+    margin: 0 10px;
+    border: 1px solid colors.color(black);
+    background: transparent;
+    border-radius: 50%;
+  }
+
+  .slick-active button {
+    background: colors.color(black);
+  }
+}

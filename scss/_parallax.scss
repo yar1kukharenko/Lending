@@ -1,0 +1,409 @@
+// ................Volunteers...............
+
+#volunteers__scene1 {
+  position: absolute;
+  top: 260px;
+  left: 0.2vw;
+  z-index: 1;
+}
+
+.volunteers__particle1 {
+  height: 3.2vw;
+  width: 3.2vw;
+  max-width: 61px;
+  max-height: 61px;
+  min-width: 35px;
+  min-height: 35px;
+  background-image: url(../img/head/particles/Group1627.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#volunteers__scene2 {
+  left: 1vw;
+  top: 70px;
+  position: absolute;
+  z-index: 1;
+}
+.volunteers__particle2 {
+  height: 4.2vw;
+  width: 4.2vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 45px;
+  min-height: 45px;
+  background-image: url(../img/head/particles/Polygon4.svg);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#volunteers__scene3 {
+  bottom: 85px;
+  right: 32px;
+  position: absolute;
+  z-index: 1;
+}
+.volunteers__particle3 {
+  // bottom: 85px;
+  // right: 32px;
+  height: 2vw;
+  width: 2vw;
+  max-width: 39px;
+  max-height: 39px;
+  min-width: 22px;
+  min-height: 22px;
+  background-image: url(../img/head/particles/Polygon7.svg);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#volunteers__scene4 {
+  right: 89px;
+  top: 17px;
+  position: absolute;
+
+  z-index: 1;
+}
+.volunteers__particle4 {
+  right: 89px;
+  top: 17px;
+  height: 3.6vw;
+  width: 3.6vw;
+  max-width: 69px;
+  max-height: 69px;
+  min-width: 39px;
+  min-height: 39px;
+  background-image: url(../img/head/particles/Star10.svg);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#volunteers__scene5 {
+  right: 0;
+  top: 250px;
+  position: absolute;
+  transform: rotate(-150deg) !important;
+  z-index: 1;
+}
+.volunteers__particle5 {
+  height: 1.3vw;
+  width: 6.3vw;
+  max-width: 120px;
+  min-height: 25px;
+  min-width: 68px;
+  max-height: 14px;
+  background-image: url(../img/head/particles/Vector3.svg);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#volunteers__scene6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.volunteers__circle {
+  height: 24vw;
+  width: 26vw;
+  max-width: 497px;
+  max-height: 460px;
+  min-width: 282px;
+  min-height: 261px;
+  background-image: url(../img/head/volunteers_circle_big.png);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  top: 50%;
+}
+
+// ................Activity...............
+
+#activity__scene1 {
+  position: absolute;
+  top: 53px;
+  right: 0;
+  z-index: 1;
+}
+
+.activity__particle1 {
+  height: 4.2vw;
+  width: 4.2vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 29px;
+  min-height: 29px;
+  background-image: url(../img/actiity/particles/Star13.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#activity__scene2 {
+  position: absolute;
+  top: 600px;
+  left: 0vw;
+  z-index: 1;
+}
+
+.activity__particle2 {
+  height: 7.8vw;
+  width: 7.8vw;
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 55px;
+  min-height: 55px;
+  background-color: #ff6d8d;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#activity__scene3 {
+  position: absolute;
+  top: 737px;
+  left: 7vw;
+  z-index: 1;
+}
+
+.activity__particle3 {
+  height: 1.6vw;
+  width: 1.6vw;
+  max-width: 31px;
+  max-height: 31px;
+  min-width: 11px;
+  min-height: 11px;
+  background-color: #ff6d8d;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+#activity__scene4 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.activity__particle4 {
+  height: 43.2vw;
+  width: 43.2vw;
+  max-width: 830px;
+  max-height: 830px;
+  min-width: 303px;
+  min-height: 303px;
+  background-image: url(../img/actiity/Group1664.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  margin: 0 auto;
+  top: 50%;
+}
+
+// ................Visit...............
+
+#visit__scene1 {
+  position: absolute;
+  top: 145px;
+  // left: 37.1vw;
+  right: 0;
+  z-index: 1;
+}
+
+.visit__particle1 {
+  height: 5.3vw;
+  width: 5.3vw;
+  max-width: 101px;
+  max-height: 101px;
+  min-width: 43px;
+  min-height: 43px;
+  background-image: url(../img/visit/particles/Group1706.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#visit__scene2 {
+  position: absolute;
+  top: 337px;
+  left: 2.6vw;
+  z-index: 1;
+}
+
+.visit__particle2 {
+  height: 4.3vw;
+  width: 4.3vw;
+  max-width: 82px;
+  max-height: 82px;
+  min-width: 35px;
+  min-height: 35px;
+  background-image: url(../img/visit/particles/Polygon9.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#visit__scene3 {
+  position: absolute;
+  top: 10px;
+  left: 13.9vw;
+  z-index: 1;
+}
+
+.visit__particle3 {
+  height: 4.6vw;
+  width: 4.6vw;
+  max-width: 89px;
+  max-height: 89px;
+  min-width: 38px;
+  min-height: 38px;
+  background-image: url(../img/visit/particles/Star11.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#visit__scene4 {
+  position: absolute;
+  top: 250px;
+  right: 0;
+  z-index: 1;
+  transform: rotate(27deg) !important;
+}
+
+.visit__particle4 {
+  height: 2.5vw;
+  width: 12.1vw;
+  max-width: 232px;
+  max-height: 48px;
+  min-width: 99px;
+  min-height: 20px;
+  background-image: url(../img/visit/particles/Vector28.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#visit__scene5 {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.visit__particle5 {
+  height: 31.8vw;
+  width: 40.9vw;
+  max-width: 786px;
+  max-height: 610px;
+  min-width: 99px;
+  min-height: 20px;
+  background-image: url(../img/visit/Maskgroup.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  top: 50%;
+}
+
+// ................Festival...............
+
+#festival__scene1 {
+  position: absolute;
+  top: 481px;
+  left: 0;
+  z-index: 1;
+}
+
+.festival__particle1 {
+  height: 9.3vw;
+  width: 9.3vw;
+  max-width: 178px;
+  max-height: 178px;
+  min-width: 75px;
+  min-height: 75px;
+  background-image: url(../img/festival/particles/Polygon10.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#festival__scene2 {
+  position: absolute;
+  top: 0;
+  right: 49px;
+  z-index: 1;
+}
+
+.festival__particle2 {
+  height: 4.2vw;
+  width: 4.2vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 40px;
+  min-height: 40px;
+  background-image: url(../img/festival/particles/Polygon8.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#festival__scene3 {
+  position: absolute;
+  bottom: 50px;
+  left: 15.6vw;
+  z-index: 1;
+}
+
+.festival__particle3 {
+  height: 3.2vw;
+  width: 3.2vw;
+  max-width: 61px;
+  max-height: 61px;
+  min-width: 26px;
+  min-height: 26px;
+  background-image: url(../img/festival/particles/Star13.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#festival__scene4 {
+  position: absolute;
+  top: 0;
+  left: 7.8vw;
+  z-index: 1;
+  transform: rotate(-159deg) !important;
+}
+
+.festival__particle4 {
+  height: 1.6vw;
+  width: 5.6vw;
+  max-width: 108px;
+  max-height: 30px;
+  min-width: 45px;
+  min-height: 12px;
+  background-image: url(../img/festival/particles/Vector3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#festival__scene5 {
+  position: absolute;
+  left: 0;
+
+  right: 0;
+  transform: rotate(5deg) !important;
+}
+
+.festival__particle5 {
+  width: 43.3vw;
+  height: 24.9vw;
+  max-width: 800px;
+  max-height: 430px;
+  min-width: 352px;
+  min-height: 203px;
+  background-image: url(../img/festival/Mathopolis_Illustrations_vF.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  margin: 0 auto;
+  top: 50%;
+}

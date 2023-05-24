@@ -1,0 +1,131 @@
+.circle {
+  height: 24vw;
+  width: 26vw;
+  max-width: 497px;
+  max-height: 460px;
+  min-width: 282px;
+  min-height: 261px;
+  background-image: url(../img/head/volunteers_circle_big.png);
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  top: 50%;
+}
+
+#scene6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#scene1 {
+  position: absolute;
+  top: 260px;
+  left: 0.2vw;
+  z-index: 1;
+}
+
+.particle1 {
+  height: 3.2vw;
+  width: 3.2vw;
+  max-width: 61px;
+  max-height: 61px;
+  min-width: 35px;
+  min-height: 35px;
+  background-image: url(../img/head/particles/Group1627.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#scene2 {
+  left: 1vw;
+  top: 70px;
+  position: absolute;
+  z-index: 1;
+}
+
+.particle2 {
+  height: 4.2vw;
+  width: 4.2vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 45px;
+  min-height: 45px;
+  background-image: url(../img/head/particles/Polygon4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#scene3 {
+  bottom: 85px;
+  right: 32px;
+  position: absolute;
+  z-index: 1;
+}
+
+.particle3 {
+  height: 2vw;
+  width: 2vw;
+  max-width: 39px;
+  max-height: 39px;
+  min-width: 22px;
+  min-height: 22px;
+  background-image: url(../img/head/particles/Polygon7.svg);
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#scene4 {
+  right: 89px;
+  top: 17px;
+  position: absolute;
+  z-index: 1;
+}
+
+.particle4 {
+  right: 89px;
+  top: 17px;
+  height: 3.6vw;
+  width: 3.6vw;
+  max-width: 69px;
+  max-height: 69px;
+  min-width: 39px;
+  min-height: 39px;
+  background-image: url(../img/head/particles/Star10.svg);
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#scene5 {
+  max-width: 659px;
+  max-height: 537px;
+  right: 10%;
+  top: 200px;
+  position: absolute;
+  transform: rotate(-150deg) !important;
+  z-index: 1;
+}
+
+.particle5 {
+  transform: matrix(-0.88, -0.48, 0.51, -0.86, 0, 0);
+  height: 1.3vw;
+  width: 6.3vw;
+  max-width: 120px;
+  min-height: 25px;
+  min-width: 68px;
+  max-height: 14px;
+  background-image: url(../img/head/particles/Vector3.svg);
+  right: 0;
+  top: 200px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}/*# sourceMappingURL=parallax.css.map */

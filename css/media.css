@@ -1,0 +1,31 @@
+@media (min-width: 640px) {
+  .container {
+    padding: 0 25px;
+  }
+  .header__inner {
+    min-height: 85px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+  .header__inner {
+    min-height: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+  .header__inner {
+    min-height: 130px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1455px;
+  }
+}/*# sourceMappingURL=media.css.map */

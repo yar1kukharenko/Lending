@@ -1,0 +1,47 @@
+@mixin respond($media) {
+  @if $media == 640 {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+  @if $media == 620 {
+    @media (min-width: 620px) {
+      @content;
+    }
+  }
+  @if $media == 610 {
+    @media (min-width: 610px) {
+      @content;
+    }
+  }
+  @if $media == 660 {
+    @media (min-width: 660px) {
+      @content;
+    }
+  }
+  @if $media == 768 {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $media == 805 {
+    @media ((min-width: 805px) and (max-width: 1000px)) {
+      @content;
+    }
+  }
+  @if $media == 1024 {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $media == 674 {
+    @media (min-width: 674px) {
+      @content;
+    }
+  }
+  @if $media == 1440 {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}

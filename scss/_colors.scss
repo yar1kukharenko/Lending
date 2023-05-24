@@ -1,0 +1,10 @@
+$colors: (
+  black: #2a2a2a,
+  Purple: #6a19f5,
+  beige: #fff2d6,
+  yellow: #f6c55a,
+);
+
+@function color($key) {
+  @return map-get($colors, $key);
+}

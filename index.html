@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteers</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            result="blur"
+            stdDeviation="10"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+            result="goo"
+          ></feColorMatrix>
+          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+        </filter>
+      </defs>
+    </svg>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="logo">
+            <a aria-label="Main page" class="header__logo__link" href="#">
+              <picture>
+                <source
+                  srcset="./img/header/logo.png"
+                  media="(max-width: 375px)"
+                />
+                <img src="./img/header/logo_big.png" alt="Mathopolis" />
+              </picture>
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="menu__link underline_link-1" href="#activity"
+                  >PUZZLES
+                  <svg viewBox="0 0 70 36">
+                    <path
+                      d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
+                    /></svg
+                ></a>
+              </li>
+              <li class="menu__item">
+                <a href="#visit" class="menu__link underline_link-2"
+                  >GET INVOLVED
+                  <svg viewBox="0 0 70 36">
+                    <path
+                      d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#festival" class="menu__link underline_link-3"
+                  >EVENTS
+                  <svg viewBox="0 0 70 36">
+                    <path
+                      d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#footer" class="menu__link underline_link-4"
+                  >ABOUT
+                  <svg viewBox="0 0 70 36">
+                    <path
+                      d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link underline_link-5"
+                  >STORE
+                  <svg viewBox="0 0 70 36">
+                    <path
+                      d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="menu__item mobile_item">
+                <a href="#" class="link_button mobile_button">donate</a>
+              </li>
+            </ul>
+            <button class="menu__btn" aria-label="Menu Button"></button>
+          </nav>
+          <!-- <a href="#" class="link_button header__button">DONATE</a> -->
+          <a href="#" class="header__blob-btn link_button">
+            DONATE
+            <span class="header__blob-btn__inner">
+              <span class="header__blob-btn__blobs">
+                <span class="header__blob-btn__blob"></span>
+                <span class="header__blob-btn__blob"></span>
+                <span class="header__blob-btn__blob"></span>
+                <span class="header__blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <section class="volunteers">
+      <div class="container">
+        <div class="volunteers__inner grid_container">
+          <div class="volunteers__text">
+            <h1 class="volunteers__tittle">VOLUNTEERS</h1>
+            <h2 class="volunteers__subtittle">
+              Make magical math moments in your community.
+            </h2>
+            <p class="volunteers__description">
+              Mathopolis relies on volunteers to help create magical math
+              moments for kids. We have a number of ways to get involved, from
+              playing math puzzles in a virtual classroom to hosting your own
+              festival.
+            </p>
+          </div>
+          <div class="volunteers__pic">
+            <div id="volunteers__scene1">
+              <div class="volunteers__particle1" data-depth="5"></div>
+            </div>
+            <div id="volunteers__scene2">
+              <div class="volunteers__particle2" data-depth="5"></div>
+            </div>
+            <div id="volunteers__scene3">
+              <div class="volunteers__particle3" data-depth="5"></div>
+            </div>
+            <div id="volunteers__scene4">
+              <div class="volunteers__particle4" data-depth="5"></div>
+            </div>
+            <div id="volunteers__scene5">
+              <div class="volunteers__particle5" data-depth="5"></div>
+            </div>
+            <div id="volunteers__scene6">
+              <div class="volunteers__circle" data-depth="0.5"></div>
+            </div>
+            <picture>
+              <source
+                srcset="./img/head/volunteers.png"
+                media="(max-width: 375px)"
+              />
+              <img src="./img/head/volunteers_big.png" alt="Volunteers" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="spacer layer1"></div>
+      <div class="container">
+        <div class="testimonials__inner">
+          <!-- <button class="testimonials__button">
+            <img
+              class="testimoinals__arrow--left"
+              src="./img/testimoinals/button.svg"
+              alt="Left"
+            />
+          </button> -->
+
+          <div class="testimonials__text">
+            <div class="slider">
+              <div class="slider__item">
+                <h2 class="testimonials__subtittle">Testimonials</h2>
+                <p class="testimonials__description">
+                  I am a biochemist, but I loved helping students explore a
+                  logic puzzle about a pirate captain and crew (complete with
+                  pirate hats).
+                </p>
+                <p class="testimonials__name">David H.</p>
+                <p class="testimonials__post">Festival Volunteer</p>
+              </div>
+              <div class="slider__item">
+                <h2 class="testimonials__subtittle">
+                  A Happy Child's Feedback
+                </h2>
+                <p class="testimonials__description">
+                  I had an amazing time at the festival! As a kid, I love trying
+                  out new things and making new friends. The games were so much
+                  fun and the volunteers were really kind to me. I can't wait
+                  for the next one!
+                </p>
+                <p class="testimonials__name">Anna S.</p>
+                <p class="testimonials__post">Young attendee</p>
+              </div>
+              <div class="slider__item">
+                <h2 class="testimonials__subtittle">
+                  A Parent's Grateful Feedback
+                </h2>
+                <p class="testimonials__description">
+                  As a busy parent, I appreciate the effort put in by the
+                  festival volunteers to make sure my child had a great time.
+                  It's not easy keeping kids entertained, but they did an
+                  amazing job with the different activities and performances.
+                  Thank you for making our day memorable!
+                </p>
+                <p class="testimonials__name">Lucas P.</p>
+                <p class="testimonials__post">Grateful Parent</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="activity" class="activity">
+      <div class="spacer2 layer2"></div>
+      <div class="container">
+        <div class="activity__inner grid_container">
+          <div class="activity__pic">
+            <div id="activity__scene1">
+              <div class="activity__particle1" data-depth="8"></div>
+            </div>
+            <div id="activity__scene2">
+              <div class="activity__particle2" data-depth="5"></div>
+            </div>
+            <div id="activity__scene3">
+              <div class="activity__particle3" data-depth="10"></div>
+            </div>
+            <div id="activity__scene4">
+              <div class="activity__particle4" data-depth="0.5"></div>
+            </div>
+
+            <picture>
+              <source
+                srcset="./img/actiity/activity_small.png"
+                media="(max-width: 375px)"
+              />
+              <img src="./img/actiity/activity_big.png" alt="Chess" />
+            </picture>
+          </div>
+          <div class="activity__box">
+            <div class="activity__text">
+              <h2 class="activity__subtittle">Lead an Activity</h2>
+              <p class="activity__description">
+                Play a puzzle with kids at a virtual math circle or in-person
+                festival. Volunteers lead our puzzles by encouraging independent
+                exploration and asking strategic questions to help with deeper
+                thinking.
+              </p>
+            </div>
+            <a href="#" class="activity__blob-btn link_button">
+              ATTEND A WORKSHOP
+              <span class="activity__blob-btn__inner">
+                <span class="activity__blob-btn__blobs">
+                  <span class="activity__blob-btn__blob"></span>
+                  <span class="activity__blob-btn__blob"></span>
+                  <span class="activity__blob-btn__blob"></span>
+                  <span class="activity__blob-btn__blob"></span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="spacer3 layer3"></div>
+    </section>
+    <section id="visit" class="visit">
+      <div class="container">
+        <div class="visit__inner grid_container">
+          <div class="visit__pic small_pic">
+            <picture>
+              <source
+                srcset="./img/visit/visit_small.png"
+                media="(max-width: 375px)"
+              />
+              <img src="./img/visit/visit_big.png " alt="A game of logic" />
+            </picture>
+          </div>
+          <div class="visit__box">
+            <div class="visit__text">
+              <h2 class="visit__subtittle">Run a Classroom Visit</h2>
+              <p class="visit__description">
+                Lead virtual classroom visits in your neighborhood elementary or
+                middle school. We train volunteers (including high school and
+                college students) on how to manage this virtual outreach
+                activity. The only thing you need to bring is an open mind and
+                the desire to bring fun math into a kid’s life.
+              </p>
+            </div>
+            <a href="#" class="visit__blob-btn link_button">
+              VOLUNTEER
+              <span class="visit__blob-btn__inner">
+                <span class="visit__blob-btn__blobs">
+                  <span class="visit__blob-btn__blob"></span>
+                  <span class="visit__blob-btn__blob"></span>
+                  <span class="visit__blob-btn__blob"></span>
+                  <span class="visit__blob-btn__blob"></span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="visit__pic-big">
+            <div id="visit__scene1">
+              <div class="visit__particle1" data-depth="8"></div>
+            </div>
+            <div id="visit__scene2">
+              <div class="visit__particle2" data-depth="5"></div>
+            </div>
+            <div id="visit__scene3">
+              <div class="visit__particle3" data-depth="10"></div>
+            </div>
+            <div id="visit__scene4">
+              <div class="visit__particle4" data-depth="5"></div>
+            </div>
+            <div id="visit__scene5">
+              <div class="visit__particle5" data-depth="0.5"></div>
+            </div>
+            <picture>
+              <source
+                srcset="./img/visit/visit_small.png"
+                media="(max-width: 375px)"
+              />
+              <img src="./img/visit/visit_big.png " alt="A game of logic" />
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="spacer4 layer4"></div>
+    </section>
+    <section id="festival" class="festival">
+      <div class="festival__inner grid_container">
+        <div class="festival__pic">
+          <div id="festival__scene1">
+            <div class="festival__particle1" data-depth="2"></div>
+          </div>
+          <div id="festival__scene2">
+            <div class="festival__particle2" data-depth="5"></div>
+          </div>
+          <div id="festival__scene3">
+            <div class="festival__particle3" data-depth="10"></div>
+          </div>
+          <div id="festival__scene4">
+            <div class="festival__particle4" data-depth="5"></div>
+          </div>
+          <div id="festival__scene5">
+            <div class="festival__particle5" data-depth="0.5"></div>
+          </div>
+
+          <picture>
+            <source
+              srcset="./img/festival/festival_small.png"
+              media="(max-width: 375px)"
+            />
+            <img src="./img/festival/festival_big.png" alt="Festival" />
+          </picture>
+        </div>
+        <div class="festival__box">
+          <div class="fesival__text">
+            <h2 class="festival__subtittle">Host a Festival</h2>
+            <p class="festival__description">
+              A math festival is a one-time event where children gather and
+              explore math through puzzles. Our festivals are hosted by
+              volunteers who want to connect the children in their community
+              with a joyful math experience. We have all the resources you need
+              to host a festival.
+            </p>
+          </div>
+          <a href="#" class="festival__blob-btn link_button">
+            learn more
+            <span class="festival__blob-btn__inner">
+              <span class="festival__blob-btn__blobs">
+                <span class="festival__blob-btn__blob"></span>
+                <span class="festival__blob-btn__blob"></span>
+                <span class="festival__blob-btn__blob"></span>
+                <span class="festival__blob-btn__blob"></span>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="footer__inner grid_container">
+          <div class="footer__logo_description">
+            <picture>
+              <source
+                srcset="./img/footer/footer_logo.png"
+                media="(max-width: 375px)"
+              />
+              <img src="./img/footer/logo_big.png" alt="Logo" />
+            </picture>
+            <p class="footer__description">
+              We're a fiscally-sponsored project of a 501(c)3, Social and
+              Environmental Entrepreneurs.
+            </p>
+          </div>
+          <div class="footer__links">
+            <ul class="footer__left_links">
+              <li class="footer__item">
+                <a href="#" class="footer__link">STUDENTS</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">PARENTS</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">TEACHERS</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">VOLUNTEERS</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">EVENTS</a>
+              </li>
+            </ul>
+            <ul class="footer__right_links">
+              <li class="footer__item">
+                <a href="#" class="footer__link">PUZZLES</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">ABOUT</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">NEWS</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">STORE</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">DONATE</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__social_links">
+            <p class="footer__follow">Follow us:</p>
+            <ul class="footer__social_icons">
+              <li>
+                <a
+                  aria-label="Twitter Link"
+                  href="#"
+                  class="footer__social_link"
+                  ><img src="./img/footer/social/twitter.svg" alt="Twitter"
+                /></a>
+              </li>
+              <li>
+                <a
+                  aria-label="Linkedin Link"
+                  href="#"
+                  class="footer__social_link"
+                  ><img src="./img/footer/social/linkedin.svg" alt="Linkedin"
+                /></a>
+              </li>
+              <li>
+                <a
+                  aria-label="Instagram Link"
+                  href="#"
+                  class="footer__social_link"
+                  ><img src="./img/footer/social/inst.svg" alt="Instagram"
+                /></a>
+              </li>
+              <li>
+                <a
+                  aria-label="Facebook Link"
+                  href="#"
+                  class="footer__social_link"
+                  ><img src="./img/footer/social/facebook.svg" alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a
+                  aria-label="YouTube Link"
+                  href="#"
+                  class="footer__social_link"
+                  ><img src="./img/footer/social/youtube.svg" alt="YouTube"
+                /></a>
+              </li>
+            </ul>
+            <a href="#" class="support__blob-btn link_button">
+              SUPPORT OUR CAUSE
+              <span class="support__blob-btn__inner">
+                <span class="support__blob-btn__blobs">
+                  <span class="support__blob-btn__blob"></span>
+                  <span class="support__blob-btn__blob"></span>
+                  <span class="support__blob-btn__blob"></span>
+                  <span class="support__blob-btn__blob"></span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <p class="footer__copyright">© 2007–2022 Mathopolis</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+      integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

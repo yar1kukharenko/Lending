@@ -1,0 +1,982 @@
+@use "base";
+
+body {
+  margin-top: 65px;
+  @include base.respond(640) {
+    margin-top: 85px;
+  }
+  @include base.respond(768) {
+    margin-top: 100px;
+  }
+  @include base.respond(1024) {
+    margin-top: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 0 15px;
+  @include base.respond(640) {
+    padding: 0 25px;
+  }
+  @include base.respond(768) {
+    padding: 0 40px;
+  }
+  @include base.respond(1024) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 3;
+    }
+    &__inner {
+      position: relative;
+      min-height: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // height: 100px;
+      @include base.respond(640) {
+        min-height: 85px;
+      }
+      @include base.respond(768) {
+        min-height: 100px;
+      }
+      @include base.respond(1024) {
+        min-height: 130px;
+      }
+    }
+    &__blob-btn {
+      display: none;
+    }
+    &__logo__link {
+      display: block;
+      width: 15vw;
+      min-width: 113px;
+      max-width: 260px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+  .menu {
+    overflow: auto;
+    position: fixed;
+    display: none;
+    top: -250%;
+    display: flex;
+    // display: none;
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #74c5ff;
+    padding: 200px 10px 20px 10px;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease 0s;
+    // display: none;
+    &__btn {
+      @include base.respond(1024) {
+        display: none;
+      }
+      position: relative;
+      z-index: 3;
+      width: 35px;
+      height: 25px;
+      border: none;
+      position: relative;
+      background-color: transparent;
+      &::after {
+        content: "";
+        display: block;
+        width: 35px;
+        height: 3px;
+        border-radius: 20px;
+        background-color: base.color(Purple);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0 11px 0 0 base.color(Purple), 0 22px 0 0 base.color(Purple);
+      }
+    }
+    &__item {
+      margin-bottom: 20px;
+    }
+    &__link {
+      font-weight: 500;
+      font-size: 2rem;
+    }
+  }
+  .menu.active {
+    // display: flex;
+    top: 0;
+  }
+  .mobile_item {
+    width: 50%;
+  }
+  .mobile_item a {
+    background-color: #f9523b;
+  }
+}
+
+@include base.respond(1024) {
+  .header {
+    &__inner {
+      min-height: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include base.respond(640) {
+        min-height: 85px;
+      }
+      @include base.respond(768) {
+        min-height: 100px;
+      }
+      @include base.respond(1024) {
+        min-height: 130px;
+      }
+    }
+
+    &__blob-btn {
+      display: none;
+      @include base.respond(1024) {
+        display: block;
+        width: 162px;
+        background-color: #f9523b;
+      }
+      $numOfBlobs: 3;
+      z-index: 1;
+      position: relative;
+      background-color: transparent;
+      transition: color 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        border-radius: 5px;
+        color: base.color(black);
+        &:after {
+          transition: all 0.3s;
+          left: 0;
+          top: 0;
+          border-radius: 5px;
+        }
+      }
+
+      &__inner {
+        z-index: -1;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background: #f9523b;
+      }
+
+      // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+      &__blobs {
+        position: relative;
+        display: block;
+        height: 100%;
+        filter: url("#goo");
+      }
+
+      &__blob {
+        position: absolute;
+        top: 0;
+        width: 100% / $numOfBlobs;
+        height: 100%;
+        background: #f6c55a;
+        border-radius: 100%;
+        transform: translate3d(0, 150%, 0) scale(1.7);
+        transition: transform 0.45s;
+
+        @supports (filter: url("#goo")) {
+          transform: translate3d(0, 170%, 0) scale(1.4);
+        }
+
+        @for $i from 1 through $numOfBlobs {
+          &:nth-child(#{$i}) {
+            left: ($i - 1) * (120% / $numOfBlobs);
+            transition-delay: ($i - 1) * 0.08s;
+          }
+        }
+
+        .header__blob-btn:hover & {
+          transform: translateZ(0) scale(1.7);
+
+          @supports (filter: url("#goo")) {
+            transform: translateZ(0) scale(1.4);
+          }
+        }
+      }
+    }
+
+    &__nav {
+      @include base.respond(1024) {
+        width: 50%;
+      }
+    }
+    &__logo__link {
+      display: block;
+      width: 15vw;
+      min-width: 113px;
+      max-width: 260px;
+    }
+  }
+
+  .mobile_button {
+    display: none;
+  }
+
+  .menu {
+    @include base.respond(1024) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 644px;
+      align-items: center;
+    }
+    &__link {
+      font-weight: 500;
+    }
+
+    &__button {
+      border: none;
+      background: transparent;
+    }
+
+    &__item {
+      // display: none;
+      @include base.respond(1024) {
+        display: block;
+      }
+    }
+    &__btn {
+      @include base.respond(1024) {
+        display: none;
+      }
+      width: 35px;
+      height: 25px;
+      border: none;
+      position: relative;
+      background-color: transparent;
+      &::after {
+        content: "";
+        display: block;
+        width: 35px;
+        height: 3px;
+        border-radius: 20px;
+        background-color: base.color(Purple);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0 11px 0 0 base.color(Purple), 0 22px 0 0 base.color(Purple);
+      }
+    }
+  }
+}
+
+.volunteers {
+  background-color: #74c5ff;
+
+  &__pic {
+    width: 100%;
+    height: 100vw;
+    max-width: 659px;
+    max-height: 537px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    & > div {
+      display: none;
+    }
+    @include base.respond(1024) {
+      & > div {
+        display: block;
+      }
+      & > picture {
+        display: none;
+      }
+    }
+  }
+
+  .circle {
+    max-width: 460px;
+  }
+  &__text {
+    max-width: 775px;
+    padding: 75px 0 0;
+    display: flex;
+    flex-direction: column;
+    @include base.respond(660) {
+      padding: 75px 0 75px;
+      justify-content: center;
+    }
+  }
+  &__tittle {
+    width: 100%;
+    text-align: center;
+    max-width: 687px;
+    @include base.adaptiv-font(54, 35);
+    margin-bottom: 30px;
+    @include base.respond(660) {
+      text-align: start;
+      margin-bottom: 20px;
+    }
+  }
+  &__subtittle {
+    text-align: left;
+    margin-bottom: 20px;
+    @include base.adaptiv-font(32, 28);
+  }
+}
+
+.testimonials {
+  background-color: #ff6d8d;
+  &__button {
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+  }
+  &__inner {
+    padding: 153px 0 100px;
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    min-height: 290px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+      text-align: center;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    min-width: 50px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  &__subtittle {
+    margin-bottom: 80px;
+  }
+  &__description {
+    @include base.adaptiv-font(24, 16);
+    max-width: 869px;
+    margin-bottom: 60px;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.testimoinals__arrow--left {
+  @include base.respond(1024) {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+  display: none;
+}
+.testimoinals__arrow--right {
+  @include base.respond(1024) {
+    width: 40px;
+    height: 40px;
+    transform: rotate(180deg);
+    display: block;
+  }
+  transform: rotate(180deg);
+  display: none;
+}
+
+.activity {
+  &__subtittle {
+    margin-bottom: 20px;
+    @include base.respond(660) {
+      margin-bottom: 40px;
+      text-align: start;
+    }
+  }
+
+  &__description {
+    max-width: 589px;
+  }
+  // &__inner {
+  //   padding: 50px 0 100px;
+  // }
+  &__box {
+    margin: 0 auto;
+    min-height: 243px;
+    display: flex;
+    flex-direction: column;
+
+    @include base.respond(660) {
+      justify-content: center;
+    }
+  }
+  &__text {
+    min-height: 143px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  &__pic {
+    max-width: 1200px;
+    max-height: 820px;
+    height: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    & > div {
+      display: none;
+    }
+    @include base.respond(1024) {
+      & > div {
+        display: block;
+      }
+      & > picture {
+        display: none;
+      }
+    }
+  }
+  &__blob-btn {
+    @include base.respond(660) {
+      max-width: 284px;
+    }
+    $numOfBlobs: 3;
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+    transition: color 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 5px;
+      color: base.color(black);
+      &:after {
+        transition: all 0.3s;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+      }
+    }
+
+    &__inner {
+      z-index: -1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: #6a19f5;
+    }
+
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    &__blob {
+      position: absolute;
+      top: 0;
+      width: 100% / $numOfBlobs;
+      height: 100%;
+      background: #f6c55a;
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+
+      @supports (filter: url("#goo")) {
+        transform: translate3d(0, 170%, 0) scale(1.4);
+      }
+
+      @for $i from 1 through $numOfBlobs {
+        &:nth-child(#{$i}) {
+          left: ($i - 1) * (120% / $numOfBlobs);
+          transition-delay: ($i - 1) * 0.08s;
+        }
+      }
+
+      .activity__blob-btn:hover & {
+        transform: translateZ(0) scale(1.7);
+
+        @supports (filter: url("#goo")) {
+          transform: translateZ(0) scale(1.4);
+        }
+      }
+    }
+  }
+}
+
+.visit {
+  background-color: #206ca3;
+  &__subtittle {
+    margin-bottom: 20px;
+    color: white;
+  }
+  &__pic-big {
+    display: none;
+    @include base.respond(620) {
+      width: 100%;
+      max-width: 926px;
+      max-height: 662px;
+      height: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      & > div {
+        display: none;
+      }
+      @include base.respond(1024) {
+        & > div {
+          display: block;
+        }
+        & > picture {
+          display: none;
+        }
+      }
+    }
+  }
+  &__subtittle {
+    max-width: 548px;
+    @include base.respond(620) {
+      text-align: start;
+    }
+  }
+
+  &__link {
+    color: base.color(black);
+    @include base.respond(620) {
+      max-width: 215px;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__inner {
+    padding: 100px 0 96px;
+  }
+  &__inner {
+    gap: 30px;
+  }
+  &__pic {
+    width: 100%;
+    max-width: 659px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include base.respond(620) {
+      display: none;
+    }
+  }
+  &__text {
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    @include base.respond(620) {
+      align-items: start;
+    }
+  }
+  &__description {
+    max-width: 529px;
+    color: white;
+    font-weight: 400;
+  }
+  &__blob-btn {
+    @include base.respond(660) {
+      max-width: 284px;
+    }
+    $numOfBlobs: 2;
+    color: base.color(black);
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+    transition: color 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 5px;
+      color: white;
+      &:after {
+        transition: all 0.3s;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+      }
+    }
+
+    &__inner {
+      z-index: -1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: #f6c55a;
+    }
+
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    &__blob {
+      position: absolute;
+      top: 0;
+      width: 100% / $numOfBlobs;
+      height: 100%;
+      background: #6a19f5;
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+
+      @supports (filter: url("#goo")) {
+        transform: translate3d(0, 170%, 0) scale(1.4);
+      }
+
+      @for $i from 1 through $numOfBlobs {
+        &:nth-child(#{$i}) {
+          left: ($i - 1) * (120% / $numOfBlobs);
+          transition-delay: ($i - 1) * 0.08s;
+        }
+      }
+
+      .visit__blob-btn:hover & {
+        transform: translateZ(0) scale(1.7);
+
+        @supports (filter: url("#goo")) {
+          transform: translateZ(0) scale(1.4);
+        }
+      }
+    }
+  }
+}
+
+.festival {
+  &__pic {
+    width: 100%;
+    max-width: 883px;
+    max-height: 716px;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    & > div {
+      display: none;
+    }
+    @include base.respond(1024) {
+      & > div {
+        display: block;
+      }
+      & > picture {
+        display: none;
+      }
+    }
+  }
+  &__inner {
+    padding: 75px 0 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  &__subtittle {
+    margin-bottom: 20px;
+    @include base.respond(610) {
+      text-align: start;
+    }
+  }
+  &__description {
+    margin-bottom: 60px;
+  }
+  &__box {
+    min-width: 245px;
+    min-height: 285px;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 589px;
+  }
+  &__text {
+    min-width: 245px;
+    max-width: 589px;
+    margin-bottom: 60px;
+  }
+  &__link {
+    @include base.respond(610) {
+      max-width: 215px;
+    }
+  }
+  &__blob-btn {
+    @include base.respond(660) {
+      max-width: 284px;
+    }
+    $numOfBlobs: 4;
+    color: white;
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+    transition: color 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 5px;
+      color: base.color(black);
+      &:after {
+        transition: all 0.3s;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+      }
+    }
+
+    &__inner {
+      z-index: -1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: #6a19f5;
+    }
+
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    &__blob {
+      position: absolute;
+      top: 0;
+      width: 100% / $numOfBlobs;
+      height: 100%;
+      background: #f6c55a;
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+
+      @supports (filter: url("#goo")) {
+        transform: translate3d(0, 170%, 0) scale(1.4);
+      }
+
+      @for $i from 1 through $numOfBlobs {
+        &:nth-child(#{$i}) {
+          left: ($i - 1) * (120% / $numOfBlobs);
+          transition-delay: ($i - 1) * 0.08s;
+        }
+      }
+
+      .festival__blob-btn:hover & {
+        transform: translateZ(0) scale(1.7);
+
+        @supports (filter: url("#goo")) {
+          transform: translateZ(0) scale(1.4);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #fdf5e5;
+  &__inner {
+    padding-bottom: 89px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @include base.respond(674) {
+      padding: 70px 0 89px;
+    }
+  }
+
+  @media ((min-width: 674px) and (max-width: 1300px)) {
+    &__inner {
+      grid-template-areas:
+        ". ."
+        "a a";
+    }
+
+    &__social_links {
+      grid-area: a;
+    }
+  }
+  &__links {
+    display: flex;
+    min-width: 232px;
+    min-height: 245px;
+    justify-content: space-around;
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+  &__logo_description {
+    margin: 0 auto;
+    max-width: 282px;
+  }
+  &__logo {
+    margin-bottom: 30px;
+    max-width: 321px;
+  }
+  &__description {
+    font-weight: 600;
+    max-width: 308px;
+    min-height: 63px;
+  }
+  &__social_links {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  &__social_link {
+    display: block;
+  }
+  &__follow {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__social_icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__copyright {
+    opacity: 0.7;
+  }
+}
+
+.support {
+  &__blob-btn {
+    @include base.respond(660) {
+      max-width: 284px;
+    }
+    $numOfBlobs: 1;
+    color: white;
+    z-index: 1;
+    position: relative;
+    background-color: transparent;
+    transition: color 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 5px;
+      color: base.color(black);
+      &:after {
+        transition: all 0.3s;
+        left: 0;
+        top: 0;
+        border-radius: 5px;
+      }
+    }
+
+    &__inner {
+      z-index: -1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: #6a19f5;
+    }
+
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    &__blob {
+      position: absolute;
+      top: 0;
+      width: 100% / $numOfBlobs;
+      height: 100%;
+      background: #f6c55a;
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+
+      @supports (filter: url("#goo")) {
+        transform: translate3d(0, 170%, 0) scale(1.4);
+      }
+
+      @for $i from 1 through $numOfBlobs {
+        &:nth-child(#{$i}) {
+          left: ($i - 1) * (120% / $numOfBlobs);
+          transition-delay: ($i - 1) * 0.08s;
+        }
+      }
+
+      .support__blob-btn:hover & {
+        transform: translateZ(0) scale(1.7);
+
+        @supports (filter: url("#goo")) {
+          transform: translateZ(0) scale(1.4);
+        }
+      }
+    }
+  }
+}
